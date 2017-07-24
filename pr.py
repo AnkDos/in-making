@@ -88,12 +88,28 @@ compared_results = compare(user,celebrity)
 sorted_results = sorted(compared_results.items(), key=operator.itemgetter(1))
 
 #Print the results to the user
-print "User 1"
-
+fo = open("data.txt", "rw+")
+print("Basic traits \t   User 1       User2        Differences")
 for keys, value in sorted_results[:5]:
-	print keys ,
+	print keys,
 	print (user[keys]),
 	print ('->'),
 	print (celebrity[keys]),
 	print ('->'),
 	print (compared_results[keys])
+
+for keys, value in sorted_results[:5]:
+	fo.write(keys),
+	fo.write("\n")
+
+for keys, value in sorted_results[:5]:
+	fo.write(str(user[keys])),
+	fo.write("\n")
+
+for keys, value in sorted_results[:5]:
+	fo.write(str(celebrity[keys])),
+	fo.write("\n")
+
+for keys, value in sorted_results[:5]:
+	fo.write(str(compared_results[keys])),
+	fo.write("\n")
