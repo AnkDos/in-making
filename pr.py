@@ -1,3 +1,4 @@
+import os
 import sys
 import requests
 import json
@@ -113,3 +114,4 @@ for keys, value in sorted_results[:5]:
 for keys, value in sorted_results[:5]:
 	fo.write(str(compared_results[keys])),
 	fo.write("\n")
+os.system("iceweasel localhost/personality_insights")
